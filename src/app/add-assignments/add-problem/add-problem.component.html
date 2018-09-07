@@ -1,0 +1,75 @@
+<div class="container-fluid" style="width: 100%">
+
+    <div class="row" style="text-align: center">
+
+      <div class="col-4 offset-1">
+        <div class="col-12">
+          <h5 style="text-align: center">Title</h5>
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" [(ngModel)]="problemAssignment.title">
+        </div>
+        <div class="col-12">
+          <h5 style="text-align: center">Start Date</h5>
+        </div>
+        <div class="col-12">
+          <input type="date" class="form-control" [(ngModel)]="problemAssignment.start">
+        </div>
+        <div class="col-12">
+          <h5 style="text-align: center">Due Date</h5>
+        </div>
+        <div class="col-12">
+          <input type="date" class="form-control" [(ngModel)]="problemAssignment.due">
+        </div>
+      </div>
+
+      <div class="col-4 offset-2">
+        <div class="col-12">
+          <h5 style="text-align: center">Problem Range</h5>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <input type="number" class="form-control" [(ngModel)]="startRange">
+          </div>
+          <div class="col-4">
+            <input type="number" class="form-control" [(ngModel)]="endRange">
+          </div>
+          <div class="col-4">
+            <button class="btn btn-primary" (click)="addRange()">Add</button>
+          </div>
+        </div>
+        <div class="col-12">
+          <h5 style="text-align: center">Add/Remove Single Problem</h5>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <input type="number" class="form-control" [(ngModel)]="problem">
+          </div>
+          <div class="col-4">
+            <button class="btn btn-primary" (click)="addProblem()">Add</button>
+          </div>
+          <div class="col-4">
+            <button class="btn btn-danger" (click)="removeProblem()">Remove</button>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row" style="text-align: center">
+          <div class="col-12">
+            <h5 style="padding-top: 2%;">Problems:</h5>
+          </div>
+          <div class="col-12" style="word-wrap: break-word; border: 1px solid grey">
+            {{ problemAssignment.ps.toString() }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success" (click)="saveAssignment()">Save</button>
+      </div>
+    </div>
+  </div>

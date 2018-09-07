@@ -1,0 +1,91 @@
+<div class="container-fluid" style="width: 100%">
+
+  <div class="row" style="text-align: center">
+
+    <div class="col-6">
+      <div class="col-12">
+        <h5 style="text-align: center">Title</h5>
+      </div>
+      <div class="col-12">
+        <input type="text" class="form-control" [(ngModel)]="readingAssignment.title">
+      </div>
+      <div class="col-12">
+        <h5 style="text-align: center">Start Date</h5>
+      </div>
+      <div class="col-12">
+        <input type="date" class="form-control" [(ngModel)]="readingAssignment.startDate">
+      </div>
+      <div class="col-12">
+        <h5 style="text-align: center">Due Date</h5>
+      </div>
+      <div class="col-12">
+        <input type="date" class="form-control" [(ngModel)]="readingAssignment.dueDate">
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="col-12">
+        <h5 style="text-align: center">Chapter</h5>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <input type="number" class="form-control" [(ngModel)]="chapter">
+        </div>
+      </div>
+      <div class="col-12">
+        <h5 style="text-align: center">Page Range</h5>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="number" class="form-control" [(ngModel)]="startRange">
+        </div>
+        <div class="col-4">
+          <input type="number" class="form-control" [(ngModel)]="endRange">
+        </div>
+        <div class="col-4">
+          <button class="btn btn-primary" (click)="addRange()">Add</button>
+        </div>
+      </div>
+      <div class="col-12">
+        <h5 style="text-align: center">Add/Remove Single Page</h5>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="number" class="form-control" [(ngModel)]="page">
+        </div>
+        <div class="col-4">
+          <button class="btn btn-primary" (click)="addPage()">Add</button>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-danger" (click)="removePage()">Remove</button>
+        </div>
+      </div>
+      <div class="row"></div>
+    </div>
+    <div class="col-12">
+      <div class="row" style="text-align: center">
+        <div class="col-12">
+          <h5 style="padding-top: 2%;">Pages:</h5>
+        </div>
+        <div class="col-12" style="word-wrap: break-word; border: 1px solid grey">
+          <div style="float: left" *ngFor="let page of readingAssignment.pages">
+            <span *ngIf="lastPageIndex === readingAssignment.pages.indexOf(page)">{{page.pageNumber}}</span>
+            <span *ngIf="lastPageIndex !== readingAssignment.pages.indexOf(page)">{{page.pageNumber}}, </span>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="text-align: center" *ngIf="formNotFilledCorrectly">
+        <h5>Fill out all Fields</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <hr>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-success" (click)="saveAssignment()">Save</button>
+    </div>
+  </div>
+</div>

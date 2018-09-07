@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+
+.cal-week-view .cal-event-container {
+  display: inherit;
+  position: absolute;
+}
+
+.cal-week-view .cal-events-row {
+  position: sticky;
+  height: 33px;
+}
+

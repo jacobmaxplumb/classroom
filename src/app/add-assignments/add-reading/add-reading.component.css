@@ -1,0 +1,20 @@
+input, button {
+  width: 100% !important;
+}
+
+.col-4 {
+  float: left;
+  padding: 1%;
+}
+
+.col-12 {
+  padding: 1%;
+}
+
+h5 {
+  padding-top: 3%;
+}
+
+h4 {
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" style="text-align: center;">
+    <div class="btn-group" style="width: 100%" role="group" aria-label="Basic example" (click)="formSelectionChanged($event)">
+      <button type="button" style="width: 33.33%" [class]="class1" (click)="class1 = 'btn btn-secondary active'; class2 = 'btn btn-secondary'; class3 = 'btn btn-secondary'">Reading</button>
+      <button type="button" style="width: 33.33%" [class]="class2" (click)="class1 = 'btn btn-secondary'; class2 = 'btn btn-secondary active'; class3 = 'btn btn-secondary'">Problems</button>
+      <button type="button" style="width: 33.33%" [class]="class3" (click)="class1 = 'btn btn-secondary'; class2 = 'btn btn-secondary'; class3 = 'btn btn-secondary active'">Other</button>
+    </div>
+  </div>
+  <br>
+  <div class="row" *ngIf="selectedForm === 'Reading'">
+    <app-add-reading style="width: 100%"></app-add-reading>
+  </div>
+  <div class="row" *ngIf="selectedForm === 'Problems'">
+    <app-add-problem style="width: 100%"></app-add-problem>
+  </div>
+  <div class="row" *ngIf="selectedForm === 'Other'">
+    <app-add-other style="width: 100%"></app-add-other>
+  </div>
+</div>

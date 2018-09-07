@@ -1,0 +1,50 @@
+<div class="container-fluid" style="width: 100%">
+
+    <div class="row" style="text-align: center">
+
+      <div class="col-4 offset-1">
+        <div class="col-12">
+          <h5 style="text-align: center">Title</h5>
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" [(ngModel)]="otherAssignment.title">
+        </div>
+        <div class="col-12">
+          <h5 style="text-align: center">Start Date</h5>
+        </div>
+        <div class="col-12">
+          <input type="date" class="form-control" [(ngModel)]="otherAssignment.start">
+        </div>
+        <div class="col-12">
+          <h5 style="text-align: center">Due Date</h5>
+        </div>
+        <div class="col-12">
+          <input type="date" class="form-control" [(ngModel)]="otherAssignment.due">
+        </div>
+      </div>
+
+      <div class="col-4 offset-2">
+          <div class="col-12">
+            <h5 style="text-align: center">Description</h5>
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control" [(ngModel)]="description">
+          </div>
+          <div class="col-12">
+            <h5 style="text-align: center">Hours Total</h5>
+          </div>
+          <div class="col-12">
+            <input type="number" class="form-control" [(ngModel)]="otherAssignment.quantity">
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success" (click)="saveAssignment()">Save</button>
+      </div>
+    </div>
+  </div>
